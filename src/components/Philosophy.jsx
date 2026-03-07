@@ -59,13 +59,31 @@ export default function Philosophy() {
       id="philosophy"
       className="relative w-full min-h-screen py-32 flex items-center justify-center overflow-hidden bg-primary text-background">
       {/* Texture Background */}
-      <div className="absolute inset-0 z-0 opacity-20 parallax-bg">
-        <img
-          src="https://images.unsplash.com/photo-1594968973184-9040a5079963?q=80&w=2000&auto=format&fit=crop"
-          alt="Dark luxurious texture"
-          className="w-full h-[120%] object-cover object-center -mt-[10%]"
+      <div className="absolute inset-0 z-0 parallax-bg overflow-hidden">
+        {/* Grain/noise texture using SVG */}
+        <svg
+          className="absolute inset-0 w-full h-[120%] -mt-[10%]"
+          xmlns="http://www.w3.org/2000/svg"
+          style={{ opacity: 0.08 }}>
+          <filter id="noise">
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.65"
+              numOctaves="3"
+              stitchTiles="stitch"
+            />
+            <feColorMatrix type="saturate" values="0" />
+          </filter>
+          <rect width="100%" height="100%" filter="url(#noise)" />
+        </svg>
+        {/* Subtle radial gradient accent */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 80% 60% at 20% 50%, rgba(201,168,76,0.07) 0%, transparent 70%)",
+          }}
         />
-        <div className="absolute inset-0 bg-primary/80"></div>
       </div>
 
       <div className="relative z-10 w-full max-w-5xl px-6 md:px-12 text-center md:text-left">
