@@ -90,19 +90,19 @@ export default function Philosophy() {
         <p
           ref={text1}
           className="font-heading font-semibold text-lg md:text-2xl text-white/50 mb-8 max-w-2xl">
-          Most software engineers focus on writing code:{" "}
+          Most CS students focus on passing the course:{" "}
           <br className="hidden md:block" />
           <span className="text-white/70">
-            Syntax, speed, and immediate output.
+            Memorizing syntax, submitting assignments, moving on.
           </span>
         </p>
 
         <h2
           ref={text2}
           className="font-drama italic font-medium text-4xl md:text-6xl lg:text-7xl leading-[1.1] text-white">
-          I focus on building <br className="hidden md:block" />
+          I focus on understanding <br className="hidden md:block" />
           <span className="inline-block mt-2 font-bold text-accent px-4 py-1 rounded-full border border-accent/30 bg-accent/5 backdrop-blur-sm shadow-[0_0_30px_rgba(201,168,76,0.15)] relative transform hover:scale-105 transition-transform duration-500">
-            Resilient Architecture.
+            How & Why It Breaks.
           </span>
         </h2>
       </div>

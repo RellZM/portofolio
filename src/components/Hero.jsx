@@ -83,17 +83,18 @@ export default function Hero() {
         <div ref={textRef}>
           <h1 className="flex flex-col gap-2 mb-8">
             <span className="hero-anim font-heading font-bold text-xl md:text-3xl tracking-tight text-white/80 uppercase">
-              Software Engineering meets
+              Curious Developer. Security Minded.
             </span>
             <span className="hero-anim font-drama italic text-5xl md:text-7xl lg:text-8xl leading-[1.1] text-white inline-block relative group">
-              Architectural Precision.
+              Building Secure Systems.
               <span className="absolute -inset-x-6 -inset-y-2 bg-gradient-to-r from-transparent via-accent/20 to-transparent opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-700 pointer-events-none -z-10"></span>
             </span>
           </h1>
 
           <p className="hero-anim max-w-xl text-lg md:text-xl text-white/70 mb-10 font-heading">
-            Afrel Zharif Muflih. Crafting digital infrastructure and secure
-            systems for the next era of software.
+            Afrel Zharif Muflih — freshman Software Engineering student with a
+            passion for building clean software and understanding how systems
+            break. Exploring the intersection of development and cybersecurity.
           </p>
         </div>
 
