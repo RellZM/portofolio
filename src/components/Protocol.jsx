@@ -10,7 +10,7 @@ const steps = [
     title: "Vulnerability Mapping",
     desc: "Rigorous threat modeling and architectural review before a single line of code is committed.",
     Visual: () => (
-      <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-[#0D0D12] rounded-3xl border border-white/5">
+      <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-primary rounded-3xl border border-white/5">
         <svg
           className="w-48 h-48 animate-[spin_20s_linear_infinite]"
           viewBox="0 0 100 100">
@@ -19,7 +19,7 @@ const steps = [
             cy="50"
             r="40"
             fill="none"
-            stroke="#C9A84C"
+            stroke="#7B61FF"
             strokeWidth="0.5"
             strokeDasharray="4 4"
             className="opacity-30"
@@ -29,7 +29,7 @@ const steps = [
             cy="50"
             r="30"
             fill="none"
-            stroke="#C9A84C"
+            stroke="#7B61FF"
             strokeWidth="1"
             className="opacity-50"
           />
@@ -38,12 +38,12 @@ const steps = [
             cy="50"
             r="20"
             fill="none"
-            stroke="#C9A84C"
+            stroke="#7B61FF"
             strokeWidth="2"
           />
           <path
             d="M50 10 L50 90 M10 50 L90 50"
-            stroke="#C9A84C"
+            stroke="#7B61FF"
             strokeWidth="0.5"
             className="opacity-20"
           />
@@ -56,14 +56,14 @@ const steps = [
     title: "Secure Component Integration",
     desc: "Building isolated, fail-safe modules that communicate over zero-trust boundaries.",
     Visual: () => (
-      <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-[#0D0D12] rounded-3xl border border-white/5">
+      <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-primary rounded-3xl border border-white/5">
         <div className="grid grid-cols-10 grid-rows-10 w-full h-full absolute inset-0 opacity-20">
           {[...Array(100)].map((_, i) => (
-            <div key={i} className="border-[0.5px] border-[#C9A84C]/20"></div>
+            <div key={i} className="border-[0.5px] border-accent/20"></div>
           ))}
         </div>
         <div
-          className="absolute w-[2px] h-[150%] bg-accent/80 blur-[2px] shadow-[0_0_15px_#C9A84C] animate-[scanning_4s_ease-in-out_infinite] rotate-12 -translate-x-[200px]"
+          className="absolute w-[2px] h-[150%] bg-accent/80 blur-[2px] shadow-[0_0_15px_rgba(123,97,255,0.6)] animate-[scanning_4s_ease-in-out_infinite] rotate-12 -translate-x-[200px]"
           style={{
             animationName: "scanning",
             animationDuration: "4s",
@@ -85,12 +85,12 @@ const steps = [
     title: "System Hardening",
     desc: "Continuous load testing, penetration simulation, and performance benchmarking.",
     Visual: () => (
-      <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-[#0D0D12] rounded-3xl border border-white/5">
+      <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-primary rounded-3xl border border-white/5">
         <svg className="w-[80%] h-32" viewBox="0 0 200 50">
           <path
             d="M 0 25 L 40 25 L 50 10 L 60 40 L 70 25 L 130 25 L 140 5 L 150 45 L 160 25 L 200 25"
             fill="none"
-            stroke="#C9A84C"
+            stroke="#7B61FF"
             strokeWidth="2"
             strokeLinejoin="round"
             className="pulse-path"

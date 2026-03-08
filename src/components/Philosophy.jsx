@@ -81,7 +81,7 @@ export default function Philosophy() {
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 80% 60% at 20% 50%, rgba(201,168,76,0.07) 0%, transparent 70%)",
+              "radial-gradient(ellipse 80% 60% at 20% 50%, rgba(123,97,255,0.1) 0%, transparent 70%)",
           }}
         />
       </div>
@@ -101,7 +101,7 @@ export default function Philosophy() {
           ref={text2}
           className="font-drama italic font-medium text-4xl md:text-6xl lg:text-7xl leading-[1.1] text-white">
           I focus on understanding <br className="hidden md:block" />
-          <span className="inline-block mt-2 font-bold text-accent px-4 py-1 rounded-full border border-accent/30 bg-accent/5 backdrop-blur-sm shadow-[0_0_30px_rgba(201,168,76,0.15)] relative transform hover:scale-105 transition-transform duration-500">
+          <span className="inline-block mt-2 font-bold text-accent px-4 py-1 rounded-full border border-accent/30 bg-accent/5 backdrop-blur-sm shadow-[0_0_30px_rgba(123,97,255,0.2)] relative transform hover:scale-105 transition-transform duration-500">
             How & Why It Breaks.
           </span>
         </h2>

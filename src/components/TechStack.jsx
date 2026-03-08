@@ -6,6 +6,21 @@ gsap.registerPlugin(ScrollTrigger);
 
 const techStack = [
   {
+    name: "HTML",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+    desc: "Semantic structure, accessibility, and SEO-optimized markup foundations.",
+  },
+  {
+    name: "CSS",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+    desc: "Advanced layouts, animations, and responsive design systems.",
+  },
+  {
+    name: "JavaScript",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    desc: "Core logic, asynchronous operations, and interactive functional programming.",
+  },
+  {
     name: "C",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
     desc: "Low-level memory management and high-performance algorithms.",
@@ -77,33 +92,19 @@ export default function TechStack() {
     <section
       ref={container}
       id="stack"
-      className="py-24 px-6 md:px-12 lg:px-24 bg-primary relative z-20 border-y border-white/5">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
-          <div className="space-y-4">
-            <h2 className="font-heading font-bold text-3xl md:text-5xl tracking-tight text-white">
-              Technical Arsenal.
-            </h2>
-            <p className="font-drama italic text-xl text-white/60 max-w-xl">
-              The languages and tools I use to forge resilient digital
-              infrastructure.
-            </p>
-          </div>
-          <div className="hidden md:flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/5">
-            <div className="w-2 h-2 rounded-full bg-accent animate-pulse"></div>
-            <span className="font-mono text-xs uppercase tracking-widest text-white/60">
-              Verified Stack
-            </span>
-          </div>
-        </div>
+      className="py-24 px-6 md:px-12 lg:px-24 bg-primary relative z-20 border-y border-white/10">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="font-drama italic text-4xl md:text-6xl text-white mb-20 text-center">
+          Technical Arsenal.
+        </h2>
 
-        <div className="flex flex-wrap justify-center gap-4 w-full">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 max-w-5xl mx-auto place-items-center">
           {techStack.map((tech, index) => (
             <div
               key={index}
-              className="tech-item w-[calc(50%-0.5rem)] md:w-[calc(25%-0.75rem)] lg:w-[calc(14.28%-1rem)] max-w-[140px] group relative aspect-square flex flex-col items-center justify-center p-4 md:p-6 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-accent/40 transition-all duration-300 cursor-pointer">
+              className="tech-item w-full max-w-[160px] group relative aspect-square flex flex-col items-center justify-center p-4 md:p-6 bg-white/[0.03] border border-white/10 rounded-2xl hover:bg-accent/5 hover:border-accent/40 transition-all duration-300 cursor-pointer">
               {/* Hover Glow Background */}
-              <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500 rounded-full pointer-events-none -z-0"></div>
+              <div className="absolute inset-x-4 inset-y-4 bg-accent/20 opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-500 rounded-full pointer-events-none -z-0"></div>
 
               {/* Icon & Name */}
               <div className="relative z-10 flex flex-col items-center transition-transform duration-300 group-hover:-translate-y-4">

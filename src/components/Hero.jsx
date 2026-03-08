@@ -51,30 +51,38 @@ export default function Hero() {
     <section
       ref={container}
       className="relative w-full h-[100dvh] flex items-end pb-20 md:pb-32 px-6 md:px-12 lg:px-24 overflow-hidden bg-primary cursor-default">
-      {/* Background with Spotlight */}
-      <div className="absolute inset-0 z-0">
+      {/* Relevant Tech/Cybersecurity Background Image */}
+      <div className="absolute inset-0 z-0 bg-primary">
         <img
-          src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2000&auto=format&fit=crop"
-          alt="Dark luxurious interior"
-          className="w-full h-full object-cover opacity-50 scale-105 transition-transform duration-1000 origin-center"
+          src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2000&auto=format&fit=crop"
+          alt="Cybersecurity and technology concept"
+          className="w-full h-full object-cover opacity-40 mix-blend-luminosity scale-105 transition-transform duration-1000 origin-center"
+          style={{
+            transform: `scale(1.05) translate(${mousePosition.x * 0.005}px, ${mousePosition.y * 0.005}px)`,
+          }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-transparent"></div>
-        <div className="absolute inset-0 bg-primary/40"></div>
 
-        {/* Spotlight Effect */}
+        {/* Cinematic Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-transparent"></div>
+        <div className="absolute inset-0 bg-primary/20"></div>
+
+        {/* Noise Overlay for Texture */}
+        <div className="absolute inset-0 opacity-[0.1] mix-blend-overlay pointer-events-none noise-overlay"></div>
+
+        {/* Precise Interactive Spotlight */}
         <div
           className="absolute inset-0 pointer-events-none transition-opacity duration-300"
           style={{
-            background: `radial-gradient(circle 600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(201, 168, 76, 0.1), transparent 80%)`,
+            background: `radial-gradient(circle 700px at ${mousePosition.x}px ${mousePosition.y}px, rgba(123, 97, 255, 0.15), transparent 85%)`,
           }}></div>
 
-        {/* Subtle grid overlay responding to mouse */}
+        {/* Subtle Interactive Particle Grid */}
         <div
-          className="absolute inset-0 opacity-[0.03] transition-transform duration-300 pointer-events-none"
+          className="absolute inset-0 opacity-[0.06] pointer-events-none"
           style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)`,
-            backgroundSize: "40px 40px",
-            transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`,
+            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(123, 97, 255, 0.25) 1px, transparent 0)`,
+            backgroundSize: "60px 60px",
+            transform: `translate(${mousePosition.x * 0.012}px, ${mousePosition.y * 0.012}px)`,
           }}></div>
       </div>
 
@@ -87,7 +95,7 @@ export default function Hero() {
             </span>
             <span className="hero-anim font-drama italic text-5xl md:text-7xl lg:text-8xl leading-[1.1] text-white inline-block relative group">
               Building Secure Systems.
-              <span className="absolute -inset-x-6 -inset-y-2 bg-gradient-to-r from-transparent via-accent/20 to-transparent opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-700 pointer-events-none -z-10"></span>
+              <span className="absolute -inset-x-6 -inset-y-2 bg-gradient-to-r from-transparent via-accent/30 to-transparent opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-700 pointer-events-none -z-10"></span>
             </span>
           </h1>
 
@@ -101,7 +109,7 @@ export default function Hero() {
         <div className="hero-anim">
           <a
             href="mailto:afrelzhm@gmail.com"
-            className="inline-flex items-center justify-center relative overflow-hidden bg-accent text-primary px-8 py-4 rounded-full font-bold text-lg transition-transform hover:scale-[1.03] active:scale-95 group shadow-[0_0_40px_rgba(201,168,76,0.2)] hover:shadow-[0_0_60px_rgba(201,168,76,0.4)]"
+            className="inline-flex items-center justify-center relative overflow-hidden bg-accent text-primary px-8 py-4 rounded-full font-bold text-lg transition-transform hover:scale-[1.03] active:scale-95 group shadow-[0_0_40px_rgba(123,97,255,0.2)] hover:shadow-[0_0_60px_rgba(123,97,255,0.4)]"
             style={{
               transitionTimingFunction: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
             }}>

@@ -101,27 +101,27 @@ export default function Experience() {
                 <div className="md:w-1/3 mb-2 md:mb-0 md:text-right relative">
                   {/* Timeline dot and line for desktop */}
                   <div className="hidden md:block absolute right-[-24px] top-2 bottom-[-3rem] w-px bg-text-dark/10"></div>
-                  <div className="hidden md:block absolute right-[-28px] top-2 w-2 h-2 rounded-full bg-accent scale-100 group-hover:scale-150 group-hover:shadow-[0_0_10px_#C9A84C] transition-all duration-300"></div>
+                  <div className="hidden md:block absolute right-[-28px] top-2 w-2 h-2 rounded-full bg-accent scale-100 group-hover:scale-150 group-hover:shadow-[0_0_15px_rgba(123,97,255,0.5)] transition-all duration-300"></div>
 
-                  <h3 className="font-mono text-sm text-text-dark/50">
+                  <h3 className="font-mono text-sm tracking-wider text-text-dark/40 uppercase">
                     {exp.date}
                   </h3>
                 </div>
 
-                <div className="md:w-2/3 pb-6 md:pb-0">
-                  <h3 className="font-heading font-bold text-xl text-text-dark group-hover:text-accent transition-colors">
+                <div className="md:w-2/3 pb-12 md:pb-24">
+                  <h3 className="font-heading font-bold text-2xl md:text-3xl text-text-dark group-hover:text-accent transition-colors duration-300">
                     {exp.role}
                   </h3>
-                  <h4 className="font-heading font-semibold text-md text-text-dark/70 mb-4">
+                  <h4 className="font-heading font-semibold text-lg text-text-dark/70 mb-6">
                     {exp.company}
                   </h4>
 
-                  <ul className="space-y-2">
+                  <ul className="space-y-4">
                     {exp.desc.map((item, i) => (
                       <li
                         key={i}
-                        className="font-heading text-sm text-text-dark/60 flex items-start gap-3">
-                        <span className="text-accent mt-1 opacity-50">
+                        className="font-heading text-base text-text-dark/60 flex items-start gap-4">
+                        <span className="text-accent mt-1.5 opacity-70 font-mono">
                           &gt;
                         </span>
                         <span className="leading-relaxed">{item}</span>

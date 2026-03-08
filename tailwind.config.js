@@ -4,15 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#000000",
-        accent: "#F5C518",
-        background: "#FFFFFF",
-        "text-dark": "#000000",
+        primary: "#0A0A14", // Deep Void
+        accent: "#7B61FF", // Plasma
+        background: "#F0EFF4", // Ghost
+        "text-dark": "#18181B", // Graphite
       },
       fontFamily: {
-        heading: ["Space Grotesk", "sans-serif"],
-        drama: ["Space Grotesk", "sans-serif"],
-        mono: ["Roboto Mono", "monospace"],
+        heading: ["Sora", "sans-serif"],
+        drama: ["Instrument Serif", "serif"],
+        mono: ["Fira Code", "monospace"],
       },
     },
   },
