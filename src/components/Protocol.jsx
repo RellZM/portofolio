@@ -10,16 +10,16 @@ const steps = [
     title: "Vulnerability Mapping",
     desc: "Rigorous threat modeling and architectural review before a single line of code is committed.",
     Visual: () => (
-      <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-primary rounded-3xl border border-white/5">
+      <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-primary/20 rounded-2xl border border-white/10 backdrop-blur-sm">
         <svg
-          className="w-48 h-48 animate-[spin_20s_linear_infinite]"
+          className="w-32 h-32 md:w-48 md:h-48 animate-[spin_25s_linear_infinite]"
           viewBox="0 0 100 100">
           <circle
             cx="50"
             cy="50"
             r="40"
             fill="none"
-            stroke="#7B61FF"
+            stroke="white"
             strokeWidth="0.5"
             strokeDasharray="4 4"
             className="opacity-30"
@@ -29,7 +29,7 @@ const steps = [
             cy="50"
             r="30"
             fill="none"
-            stroke="#7B61FF"
+            stroke="white"
             strokeWidth="1"
             className="opacity-50"
           />
@@ -38,12 +38,12 @@ const steps = [
             cy="50"
             r="20"
             fill="none"
-            stroke="#7B61FF"
+            stroke="white"
             strokeWidth="2"
           />
           <path
             d="M50 10 L50 90 M10 50 L90 50"
-            stroke="#7B61FF"
+            stroke="white"
             strokeWidth="0.5"
             className="opacity-20"
           />
@@ -56,14 +56,14 @@ const steps = [
     title: "Secure Component Integration",
     desc: "Building isolated, fail-safe modules that communicate over zero-trust boundaries.",
     Visual: () => (
-      <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-primary rounded-3xl border border-white/5">
-        <div className="grid grid-cols-10 grid-rows-10 w-full h-full absolute inset-0 opacity-20">
+      <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-primary/20 rounded-2xl border border-white/10 backdrop-blur-sm">
+        <div className="grid grid-cols-10 grid-rows-10 w-full h-full absolute inset-0 opacity-10">
           {[...Array(100)].map((_, i) => (
-            <div key={i} className="border-[0.5px] border-accent/20"></div>
+            <div key={i} className="border-[0.5px] border-white/20"></div>
           ))}
         </div>
         <div
-          className="absolute w-[2px] h-[150%] bg-accent/80 blur-[2px] shadow-[0_0_15px_rgba(123,97,255,0.6)] animate-[scanning_4s_ease-in-out_infinite] rotate-12 -translate-x-[200px]"
+          className="absolute w-[2px] h-[150%] bg-white/80 blur-[2px] shadow-[0_0_15px_rgba(255,255,255,0.6)] animate-[scanning_4s_ease-in-out_infinite] rotate-12 -translate-x-[200px]"
           style={{
             animationName: "scanning",
             animationDuration: "4s",
@@ -76,7 +76,7 @@ const steps = [
             50% { transform: translateX(150px) rotate(12deg); }
             100% { transform: translateX(-150px) rotate(12deg); }
           }
-         `}</style>
+        `}</style>
       </div>
     ),
   },
@@ -85,12 +85,12 @@ const steps = [
     title: "System Hardening",
     desc: "Continuous load testing, penetration simulation, and performance benchmarking.",
     Visual: () => (
-      <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-primary rounded-3xl border border-white/5">
-        <svg className="w-[80%] h-32" viewBox="0 0 200 50">
+      <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-primary/20 rounded-2xl border border-white/10 backdrop-blur-sm">
+        <svg className="w-[80%] h-24 md:h-32" viewBox="0 0 200 50">
           <path
             d="M 0 25 L 40 25 L 50 10 L 60 40 L 70 25 L 130 25 L 140 5 L 150 45 L 160 25 L 200 25"
             fill="none"
-            stroke="#7B61FF"
+            stroke="white"
             strokeWidth="2"
             strokeLinejoin="round"
             className="pulse-path"
@@ -102,10 +102,8 @@ const steps = [
             stroke-dashoffset: 400;
             animation: pulse-draw 3s linear infinite;
           }
-          @keyframes pulse-draw {
-            to { stroke-dashoffset: 0; }
-          }
-         `}</style>
+          @keyframes pulse-draw { to { stroke-dashoffset: 0; } }
+        `}</style>
       </div>
     ),
   },
@@ -113,32 +111,42 @@ const steps = [
 
 export default function Protocol() {
   const container = useRef(null);
-  const panelsRef = useRef([]);
+  const scrollerRef = useRef(null);
+  const cardRefs = useRef([]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const panels = panelsRef.current;
+      const cards = cardRefs.current;
+      const totalCards = cards.length;
 
-      panels.forEach((panel, i) => {
-        // Skip the last panel for pinning/scaling out, it just stops
-        if (i < panels.length - 1) {
-          ScrollTrigger.create({
-            trigger: panel,
-            start: "top top",
-            end: "bottom top",
+      cards.forEach((card, index) => {
+        const isLastCard = index === totalCards - 1;
+        const cardInner = card.querySelector(".scroll-stack-card");
+
+        // Create the stacking effect
+        gsap.to(cardInner, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top 15%",
+            endTrigger: ".scroll-stack-end",
+            end: "top top",
             pin: true,
             pinSpacing: false,
-          });
+            scrub: true,
+            invalidateOnRefresh: true,
+          },
+        });
 
-          gsap.to(panel, {
+        // Scale and fade cards as they get covered
+        if (!isLastCard) {
+          gsap.to(cardInner, {
             scale: 0.9,
             opacity: 0.5,
-            filter: "blur(10px)",
-            ease: "none",
+            filter: "blur(4px)",
             scrollTrigger: {
-              trigger: panel,
-              start: "top top",
-              end: "bottom top",
+              trigger: cards[index + 1],
+              start: "top 80%",
+              end: "top 15%",
               scrub: true,
             },
           });
@@ -153,46 +161,106 @@ export default function Protocol() {
     <section
       ref={container}
       id="protocol"
-      className="relative w-full bg-background text-text-dark pb-24">
-      <div className="pt-32 pb-16 px-6 md:px-12 text-center">
-        <h2 className="font-heading font-bold text-4xl tracking-tight mb-4">
+      className="relative w-full bg-primary py-32 overflow-hidden">
+      <style>{`
+        .scroll-stack-scroller {
+          position: relative;
+          width: 100%;
+          height: auto;
+          overflow: visible;
+        }
+
+        .scroll-stack-inner {
+          padding: 5vh 2rem 5rem;
+          max-width: 85rem;
+          margin: 0 auto;
+        }
+
+        .scroll-stack-card-wrapper {
+          position: relative;
+          padding-bottom: 2rem;
+        }
+
+        .scroll-stack-card {
+          transform-origin: top center;
+          will-change: transform, opacity, filter;
+          backface-visibility: hidden;
+          transform-style: preserve-3d;
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+          min-height: 24rem;
+          width: 100%;
+          padding: 3rem;
+          border-radius: 40px;
+          box-sizing: border-box;
+          position: relative;
+          display: flex;
+          align-items: center;
+          gap: 3rem;
+          background: #7B61FF; /* Plasma Purple */
+          border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+          .scroll-stack-card {
+            flex-direction: column;
+            padding: 2rem;
+            min-height: auto;
+            gap: 2rem;
+          }
+          .scroll-stack-inner {
+            padding: 2vh 1rem 5rem;
+          }
+        }
+
+        .scroll-stack-end {
+          width: 100%;
+          height: 10vh;
+        }
+      `}</style>
+
+      <div className="px-6 md:px-12 text-center mb-24">
+        <h2 className="font-heading font-bold text-4xl md:text-7xl tracking-tighter mb-6 text-white text-glow-purple">
           Engineering Protocol.
         </h2>
-        <p className="font-heading text-text-dark/60 max-w-xl mx-auto">
+        <p className="font-heading text-white/50 max-w-2xl mx-auto text-lg md:text-xl">
           The methodical approach to transforming ideas into impregnable
           software architecture.
         </p>
       </div>
 
-      <div className="relative">
-        {steps.map((step, i) => (
-          <div
-            key={i}
-            ref={(el) => (panelsRef.current[i] = el)}
-            className="w-full h-screen flex items-center justify-center sticky top-0 bg-background/95 backdrop-blur-md px-6 z-10">
-            <div className="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-              {/* Text Side */}
-              <div className="flex flex-col gap-6 order-2 lg:order-1">
-                <span className="font-mono text-5xl md:text-7xl font-light text-text-dark/20">
-                  {step.num}
-                </span>
-                <h3 className="font-heading font-bold text-3xl md:text-5xl tracking-tight">
-                  {step.title}
-                </h3>
-                <p className="font-heading text-lg text-text-dark/60 leading-relaxed max-w-md">
-                  {step.desc}
-                </p>
-              </div>
+      <div className="scroll-stack-scroller">
+        <div className="scroll-stack-inner">
+          {steps.map((step, i) => (
+            <div
+              key={i}
+              ref={(el) => (cardRefs.current[i] = el)}
+              className="scroll-stack-card-wrapper">
+              <div className="scroll-stack-card group">
+                {/* Text Content */}
+                <div className="flex-1 flex flex-col gap-4 relative z-10">
+                  <span className="font-mono text-5xl md:text-8xl font-black text-black/10 transition-colors group-hover:text-black/15 duration-500">
+                    {step.num}
+                  </span>
+                  <h3 className="font-heading font-bold text-3xl md:text-5xl tracking-tight text-white leading-none">
+                    {step.title}
+                  </h3>
+                  <p className="font-heading text-lg md:text-xl text-white/80 leading-relaxed">
+                    {step.desc}
+                  </p>
+                </div>
 
-              {/* Visual Side */}
-              <div className="aspect-square lg:aspect-auto lg:h-[600px] w-full order-1 lg:order-2 p-2 bg-text-dark/5 rounded-[2.5rem] shadow-2xl relative">
-                <div className="absolute inset-2 overflow-hidden rounded-[2rem]">
+                {/* Visual Section */}
+                <div className="w-full md:w-[40%] aspect-square lg:h-[300px] relative z-20">
                   <step.Visual />
                 </div>
+
+                {/* Secondary Decorative Glow */}
+                <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-white/5 blur-[80px] rounded-full pointer-events-none group-hover:bg-white/10 transition-colors duration-700"></div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+          <div className="scroll-stack-end"></div>
+        </div>
       </div>
     </section>
   );
