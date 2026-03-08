@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="relative bg-[#0A0A0F] text-white pt-24 pb-12 px-6 md:px-12 lg:px-24 mt-0 z-20 rounded-t-[4rem] border-t border-white/5">
+    <footer className="relative w-full bg-[#0A0A0F] text-white pt-24 pb-12 px-6 md:px-12 lg:px-24 mt-0 z-20 border-t border-white/5">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
         <div className="max-w-sm">
           <h2 className="font-heading font-bold text-3xl mb-4 text-white/90">

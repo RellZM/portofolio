@@ -64,7 +64,8 @@ export default function DecryptedText({
   }, [text, speed, maxIterations, sequential]);
 
   return (
-    <span className={`inline-block whitespace-pre ${className}`}>
+    <span
+      className={`inline-block whitespace-pre-wrap break-words ${className}`}>
       {displayText}
     </span>
   );

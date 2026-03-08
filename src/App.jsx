@@ -23,7 +23,7 @@ function App() {
   }, []);
 
   return (
-    <div className="relative w-full bg-background text-text-dark font-heading min-h-screen selection:bg-accent selection:text-primary">
+    <div className="relative w-full bg-background text-text-dark font-heading min-h-screen selection:bg-accent selection:text-primary overflow-x-hidden">
       <Navbar />
       <main>
         <Hero />
@@ -33,7 +33,16 @@ function App() {
         <Philosophy />
         <Protocol />
       </main>
-      <Footer />
+
+      {/* Smooth transition into Footer's dark background, hiding white rounded corners */}
+      <div className="w-full relative flex flex-col">
+        {/* Gradient that fades from transparent (light) to black */}
+        <div className="w-full h-32 md:h-48 bg-gradient-to-b from-transparent to-[#0A0A0F]"></div>
+        {/* Solid black wrapper directly behind the footer to hide its rounded corners edges */}
+        <div className="w-full bg-[#0A0A0F]">
+          <Footer />
+        </div>
+      </div>
     </div>
   );
 }

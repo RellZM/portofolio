@@ -98,11 +98,11 @@ export default function TechStack() {
           Technical Arsenal.
         </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 max-w-5xl mx-auto place-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-8 max-w-5xl mx-auto place-items-center">
           {techStack.map((tech, index) => (
             <div
               key={index}
-              className="tech-item w-full max-w-[160px] group relative aspect-square flex flex-col items-center justify-center p-4 md:p-6 bg-white/[0.03] border border-white/10 rounded-2xl hover:bg-accent/5 hover:border-accent/40 transition-all duration-300 cursor-pointer">
+              className="tech-item w-full max-w-[150px] md:max-w-[160px] group relative aspect-square flex flex-col items-center justify-center p-3 md:p-6 bg-white/[0.03] border border-white/10 rounded-2xl hover:bg-accent/5 hover:border-accent/40 transition-all duration-300 cursor-pointer">
               {/* Hover Glow Background */}
               <div className="absolute inset-x-4 inset-y-4 bg-accent/20 opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-500 rounded-full pointer-events-none -z-0"></div>
 
