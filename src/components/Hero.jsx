@@ -84,21 +84,23 @@ export default function Hero() {
       <div className="relative z-10 w-full max-w-4xl text-white">
         <div ref={textRef}>
           <h1 className="flex flex-col gap-2 mb-8">
-            <span className="hero-anim font-heading font-bold text-xl md:text-3xl tracking-tight text-white/80 uppercase">
+            <span className="hero-anim font-heading font-bold text-xl md:text-3xl tracking-tight text-white/80 uppercase md:whitespace-nowrap">
               <DecryptedText
                 text="Curious Developer. Security Minded."
                 speed={80}
                 maxIterations={40}
                 sequential={true}
+                className="md:whitespace-nowrap"
               />
             </span>
-            <span className="hero-anim font-drama italic text-5xl md:text-7xl lg:text-8xl leading-[1.1] text-white inline-block relative group transition-colors duration-300">
+            <span className="hero-anim font-drama italic text-5xl md:text-7xl lg:text-8xl leading-[1.1] text-white inline-block relative group transition-colors duration-300 md:whitespace-nowrap">
               <span className="relative z-10 group-hover:text-primary transition-colors duration-300">
                 <DecryptedText
                   text="Building Secure Systems."
                   speed={70}
                   maxIterations={60}
                   sequential={true}
+                  className="md:whitespace-nowrap"
                 />
               </span>
               <span className="absolute -inset-x-2 -inset-y-1 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left -z-10 shadow-[4px_4px_0_rgba(123,97,255,0.3)]"></span>
