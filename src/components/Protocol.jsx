@@ -7,66 +7,81 @@ gsap.registerPlugin(ScrollTrigger);
 const steps = [
   {
     num: "01",
-    title: "Vulnerability Mapping",
-    desc: "Rigorous threat modeling and architectural review before a single line of code is committed.",
+    title: "Relational Architecture",
+    desc: "Designing robust MySQL schemas and mapping application logic via strict ERDs before initiating development.",
     Visual: () => (
-      <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-[#7B61FF] rounded-[2rem] border border-white/10 shadow-2xl">
+      <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-[#7B61FF] rounded-[2rem] border border-white/10 shadow-2xl group">
         <svg
-          className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 animate-[spin_20s_linear_infinite]"
+          className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 transition-transform duration-700 group-hover:scale-105"
           viewBox="0 0 100 100">
-          <circle
-            cx="50"
-            cy="50"
-            r="40"
-            fill="none"
-            stroke="white"
-            strokeWidth="0.5"
-            strokeDasharray="4 4"
-            className="opacity-30"
-          />
-          <circle
-            cx="50"
-            cy="50"
-            r="30"
-            fill="none"
-            stroke="white"
-            strokeWidth="1"
-            className="opacity-50"
-          />
-          <circle
-            cx="50"
-            cy="50"
-            r="20"
-            fill="none"
-            stroke="white"
-            strokeWidth="2"
-          />
-          <path
-            d="M50 10 L50 90 M10 50 L90 50"
-            stroke="white"
-            strokeWidth="0.5"
-            className="opacity-20"
-          />
+          <g className="animate-[pulse_4s_ease-in-out_infinite]">
+            <ellipse
+              cx="50"
+              cy="25"
+              rx="30"
+              ry="10"
+              fill="none"
+              stroke="white"
+              strokeWidth="1.5"
+              className="opacity-90"
+            />
+            <path
+              d="M20 25 L20 75 M80 25 L80 75"
+              stroke="white"
+              strokeWidth="1.5"
+              className="opacity-90"
+            />
+            <ellipse
+              cx="50"
+              cy="75"
+              rx="30"
+              ry="10"
+              fill="none"
+              stroke="white"
+              strokeWidth="1.5"
+              className="opacity-90"
+            />
+            <ellipse
+              cx="50"
+              cy="50"
+              rx="30"
+              ry="10"
+              fill="none"
+              stroke="white"
+              strokeWidth="1.5"
+              strokeDasharray="4 4"
+              className="opacity-40"
+            />
+            <path
+              d="M50 35 L50 65"
+              stroke="white"
+              strokeWidth="2"
+              strokeDasharray="2 4"
+              className="animate-[spin_10s_linear_infinite]"
+            />
+          </g>
         </svg>
       </div>
     ),
   },
   {
     num: "02",
-    title: "Secure Component Integration",
-    desc: "Building isolated, fail-safe modules that communicate over zero-trust boundaries.",
+    title: "Interface Synthesis",
+    desc: "Translating complex Figma prototypes into pixel-perfect, highly maintainable React components.",
     Visual: () => (
-      <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-[#7B61FF] rounded-[2rem] border border-white/10 shadow-2xl">
-        <div className="grid grid-cols-10 grid-rows-10 w-full h-full absolute inset-0 opacity-20">
-          {[...Array(100)].map((_, i) => (
-            <div key={i} className="border-[0.5px] border-white/20"></div>
+      <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-[#7B61FF] rounded-[2rem] border border-white/10 shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
+        <div className="grid grid-cols-6 grid-rows-6 w-[70%] h-[70%] absolute inset-0 m-auto opacity-30 gap-2">
+          {[...Array(36)].map((_, i) => (
+            <div
+              key={i}
+              className={`border-[1.5px] border-white/40 rounded-sm transition-colors duration-500 ${[7, 8, 14, 15, 22].includes(i) ? "bg-white/80 shadow-[0_0_15px_rgba(255,255,255,0.8)] animate-pulse" : ""}`}></div>
           ))}
         </div>
         <div
-          className="absolute w-[2px] h-[150%] bg-white/80 blur-[2px] shadow-[0_0_15px_rgba(255,255,255,0.8)] animate-[scanning_4s_ease-in-out_infinite] rotate-12 -translate-x-[200px]"
+          className="absolute w-[3px] h-[150%] bg-white/90 blur-[2px] shadow-[0_0_20px_rgba(255,255,255,1)] animate-[scanning_3s_ease-in-out_infinite] rotate-12 -translate-x-[200px]"
           style={{
             animationName: "scanning",
-            animationDuration: "4s",
+            animationDuration: "3s",
             animationIterationCount: "infinite",
             animationTimingFunction: "ease-in-out",
           }}></div>
@@ -82,30 +97,99 @@ const steps = [
   },
   {
     num: "03",
-    title: "System Hardening",
-    desc: "Continuous load testing, penetration simulation, and performance benchmarking.",
+    title: "Hardware Bridging",
+    desc: "Connecting high-level applications to bare-metal logic utilizing C/C++ to optimize microcontroller performance.",
     Visual: () => (
-      <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-[#7B61FF] rounded-[2rem] border border-white/10 shadow-2xl">
-        <svg className="w-[80%] h-48 md:h-64 lg:h-80" viewBox="0 0 200 50">
-          <path
-            d="M 0 25 L 40 25 L 50 10 L 60 40 L 70 25 L 130 25 L 140 5 L 150 45 L 160 25 L 200 25"
-            fill="none"
-            stroke="white"
-            strokeWidth="2"
-            strokeLinejoin="round"
-            className="pulse-path"
-          />
+      <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-[#7B61FF] rounded-[2rem] border border-white/10 shadow-2xl group">
+        <svg
+          className="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 transition-transform duration-700 group-hover:scale-105"
+          viewBox="0 0 100 100">
+          <g>
+            <rect
+              x="35"
+              y="35"
+              width="30"
+              height="30"
+              rx="4"
+              fill="none"
+              stroke="white"
+              strokeWidth="2.5"
+            />
+            <rect
+              x="42"
+              y="42"
+              width="16"
+              height="16"
+              rx="2"
+              fill="white"
+              className="opacity-30 animate-[pulse_2s_ease-in-out_infinite]"
+            />
+            {[20, 50, 80].map((y) => (
+              <g key={y}>
+                <path
+                  d={`M10 ${y} L35 ${y}`}
+                  stroke="white"
+                  strokeWidth="1.5"
+                  className="opacity-60"
+                />
+                <path
+                  d={`M65 ${y} L90 ${y}`}
+                  stroke="white"
+                  strokeWidth="1.5"
+                  className="opacity-60"
+                />
+                <circle
+                  cx="10"
+                  cy={y}
+                  r="2"
+                  fill="white"
+                  className="animate-ping"
+                  style={{ animationDelay: `${y * 10}ms` }}
+                />
+                <circle
+                  cx="90"
+                  cy={y}
+                  r="2"
+                  fill="white"
+                  className="animate-ping"
+                  style={{ animationDelay: `${y * 15}ms` }}
+                />
+              </g>
+            ))}
+            {[20, 50, 80].map((x) => (
+              <g key={`x-${x}`}>
+                <path
+                  d={`M${x} 10 L${x} 35`}
+                  stroke="white"
+                  strokeWidth="1.5"
+                  className="opacity-60"
+                />
+                <path
+                  d={`M${x} 65 L${x} 90`}
+                  stroke="white"
+                  strokeWidth="1.5"
+                  className="opacity-60"
+                />
+                <circle
+                  cx={x}
+                  cy="10"
+                  r="2"
+                  fill="white"
+                  className="animate-ping"
+                  style={{ animationDelay: `${x * 20}ms` }}
+                />
+                <circle
+                  cx={x}
+                  cy="90"
+                  r="2"
+                  fill="white"
+                  className="animate-ping"
+                  style={{ animationDelay: `${x * 5}ms` }}
+                />
+              </g>
+            ))}
+          </g>
         </svg>
-        <style>{`
-          .pulse-path {
-            stroke-dasharray: 400;
-            stroke-dashoffset: 400;
-            animation: pulse-draw 3s linear infinite;
-          }
-          @keyframes pulse-draw {
-            to { stroke-dashoffset: 0; }
-          }
-         `}</style>
       </div>
     ),
   },

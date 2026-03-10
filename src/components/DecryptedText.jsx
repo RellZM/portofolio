@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 const characters =
-  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+";
+  "mkbmkgmotKSOADMWOAMSDMLWAEjksamkmoamwodirgnsnxmz1202266934731972256!@#$%^&*()_+";
 
 export default function DecryptedText({
   text,

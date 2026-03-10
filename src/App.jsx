@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import Features from "./components/Features";
 import TechStack from "./components/TechStack";
 import Experience from "./components/Experience";
+import CVDisplay from "./components/CVDisplay";
 import Philosophy from "./components/Philosophy";
 import Protocol from "./components/Protocol";
 import Footer from "./components/Footer";
@@ -30,6 +31,7 @@ function App() {
         <Features />
         <TechStack />
         <Experience />
+        <CVDisplay />
         <Philosophy />
         <Protocol />
       </main>
