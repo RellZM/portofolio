@@ -53,6 +53,11 @@ export default function Footer() {
               Experience
             </a>
             <a
+              href="#cv-display"
+              className="font-heading text-sm text-white/70 hover:text-white transition-colors">
+              Resume / CV
+            </a>
+            <a
               href="#philosophy"
               className="font-heading text-sm text-white/70 hover:text-white transition-colors">
               Philosophy
