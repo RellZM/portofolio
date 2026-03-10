@@ -97,97 +97,111 @@ const steps = [
   },
   {
     num: "03",
-    title: "Hardware Bridging",
-    desc: "Connecting high-level applications to bare-metal logic utilizing C/C++ to optimize microcontroller performance.",
+    title: "Security Exploration (CTF)",
+    desc: "Developing an attacker's mindset by actively learning web exploitation and system vulnerabilities through Capture The Flag challenges.",
     Visual: () => (
       <div className="w-full h-full flex items-center justify-center relative overflow-hidden bg-[#7B61FF] rounded-[2rem] border border-white/10 shadow-2xl group">
         <svg
           className="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 transition-transform duration-700 group-hover:scale-105"
           viewBox="0 0 100 100">
           <g>
-            <rect
-              x="35"
-              y="35"
-              width="30"
-              height="30"
-              rx="4"
+            {/* Outer dotted ring */}
+            <circle
+              cx="50"
+              cy="50"
+              r="40"
               fill="none"
               stroke="white"
-              strokeWidth="2.5"
+              strokeWidth="1"
+              strokeDasharray="2 6"
+              className="animate-[spin_20s_linear_infinite] opacity-60"
             />
-            <rect
-              x="42"
-              y="42"
-              width="16"
-              height="16"
-              rx="2"
+            {/* Inner solid rings */}
+            <circle
+              cx="50"
+              cy="50"
+              r="25"
+              fill="none"
+              stroke="white"
+              strokeWidth="1.2"
+              className="opacity-80"
+            />
+            <circle
+              cx="50"
+              cy="50"
+              r="10"
+              fill="none"
+              stroke="white"
+              strokeWidth="2"
+              className="opacity-100"
+            />
+
+            {/* Radar Sweep */}
+            <path
+              d="M50 50 L50 10 A40 40 0 0 1 85 30 Z"
               fill="white"
-              className="opacity-30 animate-[pulse_2s_ease-in-out_infinite]"
+              className="opacity-20 animate-[spin_4s_linear_infinite]"
+              style={{ transformOrigin: "50px 50px" }}
             />
-            {[20, 50, 80].map((y) => (
-              <g key={y}>
-                <path
-                  d={`M10 ${y} L35 ${y}`}
-                  stroke="white"
-                  strokeWidth="1.5"
-                  className="opacity-60"
-                />
-                <path
-                  d={`M65 ${y} L90 ${y}`}
-                  stroke="white"
-                  strokeWidth="1.5"
-                  className="opacity-60"
-                />
-                <circle
-                  cx="10"
-                  cy={y}
-                  r="2"
-                  fill="white"
-                  className="animate-ping"
-                  style={{ animationDelay: `${y * 10}ms` }}
-                />
-                <circle
-                  cx="90"
-                  cy={y}
-                  r="2"
-                  fill="white"
-                  className="animate-ping"
-                  style={{ animationDelay: `${y * 15}ms` }}
-                />
-              </g>
-            ))}
-            {[20, 50, 80].map((x) => (
-              <g key={`x-${x}`}>
-                <path
-                  d={`M${x} 10 L${x} 35`}
-                  stroke="white"
-                  strokeWidth="1.5"
-                  className="opacity-60"
-                />
-                <path
-                  d={`M${x} 65 L${x} 90`}
-                  stroke="white"
-                  strokeWidth="1.5"
-                  className="opacity-60"
-                />
-                <circle
-                  cx={x}
-                  cy="10"
-                  r="2"
-                  fill="white"
-                  className="animate-ping"
-                  style={{ animationDelay: `${x * 20}ms` }}
-                />
-                <circle
-                  cx={x}
-                  cy="90"
-                  r="2"
-                  fill="white"
-                  className="animate-ping"
-                  style={{ animationDelay: `${x * 5}ms` }}
-                />
-              </g>
-            ))}
+
+            {/* Target 1 (Ping) */}
+            <g
+              className="animate-pulse"
+              style={{ animationDelay: "1s", animationDuration: "2s" }}>
+              <circle cx="70" cy="30" r="2.5" fill="white" />
+              <circle
+                cx="70"
+                cy="30"
+                r="6"
+                fill="none"
+                stroke="white"
+                strokeWidth="0.5"
+                className="animate-ping"
+              />
+            </g>
+
+            {/* Target 2 (Ping) */}
+            <g
+              className="animate-pulse"
+              style={{ animationDelay: "2.5s", animationDuration: "3s" }}>
+              <circle cx="25" cy="65" r="2" fill="white" />
+              <circle
+                cx="25"
+                cy="65"
+                r="5"
+                fill="none"
+                stroke="white"
+                strokeWidth="0.5"
+                className="animate-ping"
+              />
+            </g>
+
+            {/* Target 3 (Locked on crosshair) */}
+            <g className="opacity-90">
+              <path
+                d="M 60 70 L 64 70 M 68 70 L 72 70 M 66 64 L 66 68 M 66 72 L 66 76"
+                stroke="white"
+                strokeWidth="1"
+              />
+              <circle
+                cx="66"
+                cy="70"
+                r="8"
+                fill="none"
+                stroke="white"
+                strokeWidth="1"
+                className="animate-[spin_10s_linear_infinite] opacity-50"
+                strokeDasharray="4 4"
+                style={{ transformOrigin: "66px 70px" }}
+              />
+              <circle
+                cx="66"
+                cy="70"
+                r="1.5"
+                fill="white"
+                className="animate-pulse"
+              />
+            </g>
           </g>
         </svg>
       </div>
