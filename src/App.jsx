@@ -5,8 +5,7 @@ import Features from "./components/Features";
 import TechStack from "./components/TechStack";
 import Experience from "./components/Experience";
 import CVDisplay from "./components/CVDisplay";
-import Philosophy from "./components/Philosophy";
-import Protocol from "./components/Protocol";
+import LetsConnect from "./components/LetsConnect";
 import Footer from "./components/Footer";
 
 function App() {
@@ -32,8 +31,7 @@ function App() {
         <TechStack />
         <Experience />
         <CVDisplay />
-        <Philosophy />
-        <Protocol />
+        <LetsConnect />
       </main>
 
       {/* Smooth transition into Footer's dark background, hiding white rounded corners */}
