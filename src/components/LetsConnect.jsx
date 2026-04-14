@@ -53,16 +53,16 @@ export default function LetsConnect() {
   return (
     <section className="relative w-full min-h-[85vh] lg:min-h-screen bg-background border-t border-white/10 flex flex-col md:flex-row overflow-hidden">
       
-      {/* CTA Text Area - takes up 4 parts out of 16 (1/4 of the width on md) */}
+      {/* CTA Text Area */}
       <a 
         href="mailto:afrelzhm@gmail.com"
-        className="w-full md:w-1/4 flex flex-col justify-center p-8 md:p-12 border-b md:border-b-0 md:border-r border-white/10 group relative transition-all duration-500 overflow-hidden"
+        className="w-full shrink-0 md:w-1/3 flex flex-col justify-center p-8 md:p-12 border-b md:border-b-0 md:border-r border-white/10 group relative transition-all duration-500 overflow-hidden"
       >
         {/* Accent line that appears on hover - now on the right side */}
         <div className="absolute top-0 right-0 w-full md:w-1 h-1 md:h-full bg-accent origin-right md:origin-top scale-x-0 md:scale-x-100 md:scale-y-0 group-hover:scale-100 transition-transform duration-500 ease-out z-10 shadow-[0_0_20px_rgba(123,97,255,1)]"></div>
         
         <div className="relative z-20 flex flex-col items-start gap-6">
-          <h2 className="font-drama text-4xl lg:text-5xl xl:text-6xl text-accent transition-all duration-300 leading-[1.1] group-hover:drop-shadow-[0_0_20px_rgba(123,97,255,0.6)]">
+          <h2 className="font-drama text-4xl lg:text-5xl text-accent transition-all duration-300 leading-[1.1] group-hover:drop-shadow-[0_0_20px_rgba(123,97,255,0.6)] break-words w-full">
             Is there a project in mind? <br />
             <span className="text-white transition-colors duration-300 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]">Let's connect.</span>
           </h2>
@@ -76,8 +76,8 @@ export default function LetsConnect() {
         </div>
       </a>
 
-      {/* 3D Model Area - takes up 12 parts out of 16 (3/4 of the width on md) */}
-      <div className="w-full md:w-3/4 h-[65vh] md:h-[85vh] lg:h-screen relative cursor-grab active:cursor-grabbing">
+      {/* 3D Model Area */}
+      <div className="w-full md:w-2/3 h-[65vh] md:h-[85vh] lg:h-screen relative cursor-grab active:cursor-grabbing shrink-0">
         {/* Background visual flair */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-background to-background z-0"></div>
         

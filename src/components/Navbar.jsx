@@ -34,14 +34,14 @@ export default function Navbar() {
             Expertise
           </a>
           <a
-            href="#philosophy"
+            href="#history"
             className="hover:-translate-y-[1px] transition-transform">
-            Philosophy
+            History
           </a>
           <a
-            href="#protocol"
+            href="#cv"
             className="hover:-translate-y-[1px] transition-transform">
-            Process
+            CV
           </a>
         </div>
 
