@@ -32,7 +32,7 @@ function ExeggutorModel() {
   });
 
   return (
-    <group ref={meshRef} position={[0, 0.5, 0]}>
+    <group ref={meshRef} position={[0, -3, 0]}>
       {/* 1.8x scale so you can see the whole body perfectly */}
       <primitive object={obj} scale={1.8} />
     </group>
@@ -92,7 +92,7 @@ export default function LetsConnect() {
           <Suspense fallback={<Loader />}>
             <ExeggutorModel />
             <Environment preset="city" />
-            <ContactShadows position={[0, -2.8, 0]} opacity={0.6} scale={10} blur={2.5} far={4} color="#000000" resolution={256} />
+            <ContactShadows position={[0, -3, 0]} opacity={0.6} scale={10} blur={2.5} far={4} color="#000000" resolution={256} />
           </Suspense>
 
           <OrbitControls 
