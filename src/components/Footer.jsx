@@ -57,16 +57,6 @@ export default function Footer() {
               className="font-heading text-sm text-white/70 hover:text-white transition-colors">
               Resume / CV
             </a>
-            <a
-              href="#philosophy"
-              className="font-heading text-sm text-white/70 hover:text-white transition-colors">
-              Philosophy
-            </a>
-            <a
-              href="#protocol"
-              className="font-heading text-sm text-white/70 hover:text-white transition-colors">
-              Protocol
-            </a>
           </div>
         </div>
       </div>
