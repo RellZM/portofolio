@@ -6,7 +6,16 @@ gsap.registerPlugin(ScrollTrigger);
 
 const experiences = [
   {
-    role: "Robotics Intern",
+    role: "Frontend development",
+    company: "Schematics ITS",
+    date: "April 2026 – now",
+    desc: [
+      "Successfully sliced 5+ complex design mockups from Figma into high-fidelity code using Next.js & Tailwind CSS achieving 95% visual accuracy and ensuring 100% responsiveness across mobile, and desktop devices.",
+      "Collaborated with UI/UX designers to establish a shared component library, which streamlined the hand-off process and cut down implementation time by 15% while maintaining a consistent user experience across the entire platform.",
+    ],
+  },
+  {
+    role: "Administrative and Finance Intern",
     company: "Banyubramanta ITS",
     date: "October 2025 – November 2025",
     desc: [
@@ -30,15 +39,6 @@ const experiences = [
     desc: [
       "Led and supervised a committee of over 20 members to organize Independence Day competitions, engaging more than 100 participants across multiple events.",
       "Managed logistics and inventory of over 50 pieces of equipment, ensuring all tools were fully functional and materials were delivered on time.",
-    ],
-  },
-  {
-    role: "Equipment / Member",
-    company: "Gelar Karya SMANISDA",
-    date: "April 2022 – June 2025",
-    desc: [
-      "Supported event logistics and coordination for Gelar Karya SMANISDA featuring national music guest star HIVI!",
-      "Managed equipment readiness and on-site operations to ensure a successful live performance and event flow.",
     ],
   },
   {
